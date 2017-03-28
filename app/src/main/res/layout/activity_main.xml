@@ -10,8 +10,89 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="kendraslaptop.example.com.everydaytasks.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/toolbar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/homeString"
+        android:id="@+id/homeTextStringId"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:fontFamily="casual"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/foodLogBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/foodEntryBtnId"
+        android:layout_alignBaseline="@+id/todoBtnId"
+        android:layout_alignBottom="@+id/todoBtnId"
+        android:layout_alignStart="@+id/journalBtnId"
+        android:fontFamily="casual" />
+
+    <Button
+        android:text="@string/todoListBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:id="@+id/todoBtnId"
+        android:layout_below="@+id/dayBtnId"
+        android:layout_alignStart="@+id/dayBtnId"
+        android:layout_alignEnd="@+id/dayBtnId"
+        android:fontFamily="casual" />
+
+    <Button
+        android:text="@string/exerciseBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/exersiceBtnId"
+        android:layout_alignBaseline="@+id/shoppingListBtnId"
+        android:layout_alignBottom="@+id/shoppingListBtnId"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/foodEntryBtnId"
+        android:fontFamily="casual" />
+
+    <Button
+        android:text="@string/talkAboutItBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/journalBtnId"
+        android:layout_alignBottom="@+id/dayBtnId"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="casual" />
+
+    <Button
+        android:text="@string/groceryListBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:id="@+id/shoppingListBtnId"
+        android:fontFamily="casual"
+        android:layout_below="@+id/foodEntryBtnId"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/todoBtnId" />
+
+    <Button
+        android:text="@string/dayBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dayBtnId"
+        android:layout_marginTop="56dp"
+        android:fontFamily="casual"
+        android:layout_below="@+id/homeTextStringId"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

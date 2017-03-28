@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">EveryDayTasks</string>
+    <string name="homeString">Tell me about your day...</string>
+    <string name="dayBtnText">How was your day?</string>
+    <string name="talkAboutItBtnText">Let's talk about it</string>
+    <string name="todoListBtnText">Your todo List</string>
+    <string name="foodLogBtnText">What you ate today</string>
+    <string name="groceryListBtnText">Current Shopping List</string>
+    <string name="exerciseBtnText">Exercise it! Your work out</string>
 </resources>
