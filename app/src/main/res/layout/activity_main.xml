@@ -13,10 +13,10 @@
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="?attr/colorAccent"
         android:theme="?attr/actionBarTheme"
         android:minHeight="?attr/actionBarSize"
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbarId"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
@@ -30,18 +30,9 @@
         android:textSize="24sp"
         android:textStyle="normal|bold"
         android:layout_marginTop="22dp"
-        android:layout_below="@+id/toolbar"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="@string/foodLogBtnText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/foodEntryBtnId"
-        android:layout_alignBaseline="@+id/todoBtnId"
-        android:layout_alignBottom="@+id/todoBtnId"
-        android:layout_alignStart="@+id/journalBtnId"
-        android:fontFamily="casual" />
+        android:layout_below="@+id/toolbarId"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClickJournal"/>
 
     <Button
         android:text="@string/todoListBtnText"
@@ -52,18 +43,8 @@
         android:layout_below="@+id/dayBtnId"
         android:layout_alignStart="@+id/dayBtnId"
         android:layout_alignEnd="@+id/dayBtnId"
-        android:fontFamily="casual" />
-
-    <Button
-        android:text="@string/exerciseBtnText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/exersiceBtnId"
-        android:layout_alignBaseline="@+id/shoppingListBtnId"
-        android:layout_alignBottom="@+id/shoppingListBtnId"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/foodEntryBtnId"
-        android:fontFamily="casual" />
+        android:fontFamily="casual"
+        android:onClick="onClickTodo" />
 
     <Button
         android:text="@string/talkAboutItBtnText"
@@ -72,18 +53,8 @@
         android:id="@+id/journalBtnId"
         android:layout_alignBottom="@+id/dayBtnId"
         android:layout_alignParentEnd="true"
-        android:fontFamily="casual" />
-
-    <Button
-        android:text="@string/groceryListBtnText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:id="@+id/shoppingListBtnId"
         android:fontFamily="casual"
-        android:layout_below="@+id/foodEntryBtnId"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/todoBtnId" />
+        android:onClick="onClickJournal" />
 
     <Button
         android:text="@string/dayBtnText"
@@ -93,6 +64,42 @@
         android:layout_marginTop="56dp"
         android:fontFamily="casual"
         android:layout_below="@+id/homeTextStringId"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="onClickDay" />
+
+    <Button
+        android:text="@string/sleepLogText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sleepLogBtnId"
+        android:fontFamily="casual"
+        android:layout_alignBaseline="@+id/todoBtnId"
+        android:layout_alignBottom="@+id/todoBtnId"
+        android:layout_alignStart="@+id/journalBtnId"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClickSleepLog" />
+
+    <Button
+        android:text="@string/exerciseBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/exersiceBtnId"
+        android:fontFamily="casual"
+        android:layout_alignBottom="@+id/foodEntryBtnId"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/sleepLogBtnId"
+        android:textSize="14sp"
+        android:onClick="onClickWorkoutLog" />
+
+    <Button
+        android:text="@string/foodLogBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/foodEntryBtnId"
+        android:fontFamily="casual"
+        android:layout_below="@+id/todoBtnId"
+        android:layout_alignEnd="@+id/todoBtnId"
+        android:layout_marginTop="37dp"
+        android:onClick="onClickFoodLog" />
 
 </RelativeLayout>

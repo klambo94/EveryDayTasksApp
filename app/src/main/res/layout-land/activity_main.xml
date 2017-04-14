@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollVerticalWhileLandPositionID">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="kendraslaptop.example.com.everydaytasks.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorActionBar"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/toolbarId"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/homeString"
+        android:id="@+id/homeTextStringId"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:fontFamily="casual"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/toolbarId"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/todoListBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:id="@+id/todoBtnId"
+        android:layout_below="@+id/dayBtnId"
+        android:layout_alignStart="@+id/dayBtnId"
+        android:layout_alignEnd="@+id/dayBtnId"
+        android:fontFamily="casual"
+        android:onClick="onClickTodo" />
+
+    <Button
+        android:text="@string/talkAboutItBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/journalBtnId"
+        android:layout_alignBottom="@+id/dayBtnId"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="casual"
+        android:onClick="onClickJournal" />
+
+    <Button
+        android:text="@string/dayBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dayBtnId"
+        android:layout_marginTop="56dp"
+        android:fontFamily="casual"
+        android:layout_below="@+id/homeTextStringId"
+        android:layout_alignParentStart="true"
+        android:onClick="onClickDay" />
+
+    <Button
+        android:text="@string/exerciseBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/exersiceBtnId"
+        android:fontFamily="casual"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/todoBtnId"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/sleepLogBtnId" />
+
+    <Button
+        android:text="@string/sleepLogText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sleepLogBtnId"
+        android:fontFamily="casual"
+        android:layout_above="@+id/exersiceBtnId"
+        android:layout_alignStart="@+id/journalBtnId"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="@string/foodLogBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/foodEntryBtnId"
+        android:fontFamily="casual"
+        android:onClick="onClickFoodLog"
+        android:layout_alignBaseline="@+id/exersiceBtnId"
+        android:layout_alignBottom="@+id/exersiceBtnId"
+        android:layout_alignEnd="@+id/todoBtnId" />
+
+</RelativeLayout>
+</ScrollView>
