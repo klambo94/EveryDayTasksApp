@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Created by Kendra's Laptop on 4/2/2017.
@@ -72,7 +74,7 @@ public class Journal extends AppCompatActivity{
                     return true;
                 case R.id.save_btn:
                     //TODO: Data persistance here and return intent - possibly to how was your day
-                case R.id.prevEntryBtn:
+                case R.id.prevJournalEntryBtn:
                     //TODO: Retrive list of previous entries - this will have to show up as an intent
                 default:
                     return super.onOptionsItemSelected(item);

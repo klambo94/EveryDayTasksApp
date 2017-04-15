@@ -23,7 +23,7 @@
             android:label="@string/app_name"/>
         <activity android:name=".SleepLogs"
             android:label="@string/app_name"/>
-        <activity android:name=".DayEntry"
+        <activity android:name=".PreviousEntries"
             android:label="@string/app_name"/>
         <activity android:name=".TodoList"/>
     </application>

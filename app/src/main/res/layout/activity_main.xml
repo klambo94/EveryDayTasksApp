@@ -35,49 +35,14 @@
         android:onClick="onClickJournal"/>
 
     <Button
-        android:text="@string/todoListBtnText"
+        android:text="@string/foodLogBtnText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:id="@+id/todoBtnId"
-        android:layout_below="@+id/dayBtnId"
-        android:layout_alignStart="@+id/dayBtnId"
-        android:layout_alignEnd="@+id/dayBtnId"
+        android:id="@+id/foodEntryBtnId"
         android:fontFamily="casual"
-        android:onClick="onClickTodo" />
-
-    <Button
-        android:text="@string/talkAboutItBtnText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/journalBtnId"
-        android:layout_alignBottom="@+id/dayBtnId"
-        android:layout_alignParentEnd="true"
-        android:fontFamily="casual"
-        android:onClick="onClickJournal" />
-
-    <Button
-        android:text="@string/dayBtnText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/dayBtnId"
-        android:layout_marginTop="56dp"
-        android:fontFamily="casual"
-        android:layout_below="@+id/homeTextStringId"
-        android:layout_alignParentStart="true"
-        android:onClick="onClickDay" />
-
-    <Button
-        android:text="@string/sleepLogText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sleepLogBtnId"
-        android:fontFamily="casual"
-        android:layout_alignBaseline="@+id/todoBtnId"
-        android:layout_alignBottom="@+id/todoBtnId"
-        android:layout_alignStart="@+id/journalBtnId"
-        android:layout_alignParentEnd="true"
-        android:onClick="onClickSleepLog" />
+        android:onClick="onClickFoodLog"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="@string/exerciseBtnText"
@@ -85,21 +50,57 @@
         android:layout_height="wrap_content"
         android:id="@+id/exersiceBtnId"
         android:fontFamily="casual"
-        android:layout_alignBottom="@+id/foodEntryBtnId"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/sleepLogBtnId"
         android:textSize="14sp"
-        android:onClick="onClickWorkoutLog" />
+        android:onClick="onClickWorkoutLog"
+        android:layout_alignBottom="@+id/dayBtnId"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/journalBtnId" />
 
     <Button
-        android:text="@string/foodLogBtnText"
+        android:text="@string/talkAboutItBtnText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/foodEntryBtnId"
+        android:id="@+id/journalBtnId"
         android:fontFamily="casual"
-        android:layout_below="@+id/todoBtnId"
-        android:layout_alignEnd="@+id/todoBtnId"
-        android:layout_marginTop="37dp"
-        android:onClick="onClickFoodLog" />
+        android:onClick="onClickJournal"
+        android:layout_alignBaseline="@+id/foodEntryBtnId"
+        android:layout_alignBottom="@+id/foodEntryBtnId"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="@string/sleepLogText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sleepLogBtnId"
+        android:fontFamily="casual"
+        android:onClick="onClickSleepLog"
+        android:layout_alignBaseline="@+id/todoBtnId"
+        android:layout_alignBottom="@+id/todoBtnId"
+        android:layout_alignStart="@+id/journalBtnId"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="@string/todoListBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/todoBtnId"
+        android:fontFamily="casual"
+        android:onClick="onClickTodo"
+        android:layout_marginBottom="34dp"
+        android:layout_above="@+id/foodEntryBtnId"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/foodEntryBtnId" />
+
+    <Button
+        android:text="@string/EntryLogBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dayBtnId"
+        android:layout_marginTop="40dp"
+        android:fontFamily="casual"
+        android:onClick="onPreviousEntries"
+        android:layout_below="@+id/foodEntryBtnId"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/foodEntryBtnId" />
 
 </RelativeLayout>

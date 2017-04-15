@@ -1,15 +1,24 @@
 <resources>
     <string name="app_name">EveryDayTasks</string>
     <string name="homeString">Tell me about your day...</string>
-    <string name="dayBtnText">How was your day?</string>
+    <string name="EntryLogBtn">View your previous Entries</string>
     <string name="talkAboutItBtnText">Let\'s talk about it</string>
     <string name="todoListBtnText">Your todo List</string>
     <string name="foodLogBtnText">What you ate today</string>
     <string name="sleepLogText">Sleep Log</string>
-    <string name="exerciseBtnText">Your workout</string>
+    <string name="exerciseBtnText">Work it! Log your workout</string>
     <string name="action_settings">Settings</string>
 
     <!--Journal Strings-->
     <string name="save">Save</string>
     <string name="prevEntries">Entry Log</string>
+
+    <!-- Sleep log Strings -->
+    <string name="sleepLog">Sleep Entry</string>
+    <string name="sleepStart">When did you go to bed?</string>
+    <string name="sleepEnd">When did you wake up?</string>
+    <string name="timeSpentSleeping">How long you slept</string>
+    <string name="sleepQuality">How well do you think you slept?</string>
+    <string name="btn_wake_time">Enter wake time</string>
+    <string name="btn_sleep_time">Enter start time</string>
 </resources>

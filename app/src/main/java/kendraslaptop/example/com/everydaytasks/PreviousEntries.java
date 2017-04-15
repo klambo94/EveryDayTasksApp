@@ -6,5 +6,5 @@ import android.support.v7.app.AppCompatActivity;
  * Created by Kendra's Laptop on 4/13/2017.
  */
 
-public class DayEntry extends AppCompatActivity {
+public class PreviousEntries extends AppCompatActivity {
 }

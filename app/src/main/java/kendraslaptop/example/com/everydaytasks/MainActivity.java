@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity( new Intent(this, Journal.class));
     }
 
-    public void onClickDay(View view) {
-        startActivity( new Intent(this, DayEntry.class));
+    public void onPreviousEntries(View view) {
+        startActivity( new Intent(this, PreviousEntries.class));
     }
 
     public void onClickTodo(View view) {

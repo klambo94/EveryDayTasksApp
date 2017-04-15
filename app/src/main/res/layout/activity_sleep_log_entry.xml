@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorAccent"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/sleep_entry_toolbar_id" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slept_question_id"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/slept_question_id"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="14dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:text="@string/btn_wake_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/sleep_end_question_id"
+                    android:layout_alignEnd="@+id/sleep_start_btn_id"
+                    android:id="@+id/sleep_end_btn_id"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:fontFamily="casual"
+                    android:onClick="setEndTime" />
+
+                <Button
+                    android:text="@string/btn_sleep_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sleep_start_btn_id"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:fontFamily="casual"
+                    android:layout_alignBaseline="@+id/sleep_start_question_id"
+                    android:layout_alignBottom="@+id/sleep_start_question_id"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="setStartTime" />
+
+                <TextView
+                    android:text="@string/sleepLogText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:id="@+id/sleep_entry_title_id"
+                    tools:text="@string/sleepLog"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:fontFamily="casual"
+                    android:textSize="24sp"
+                    android:textAlignment="textStart"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:text="@string/sleepQuality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/slept_question_id"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:fontFamily="casual"
+                    android:textSize="18sp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="215dp" />
+
+                <TextView
+                    android:text="@string/sleepEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/sleep_end_question_id"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:fontFamily="casual"
+                    android:textSize="18sp"
+                    android:layout_below="@+id/sleep_start_btn_id"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:text="@string/sleepStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sleep_start_question_id"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:fontFamily="casual"
+                    android:textSize="18sp"
+                    android:layout_marginTop="13dp"
+                    android:layout_below="@+id/sleep_entry_title_id"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/scrollView5">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="Sleep Quality"
+                android:ems="10"
+                android:id="@+id/sleep_quality_id"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
