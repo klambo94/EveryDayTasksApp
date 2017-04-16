@@ -21,4 +21,9 @@
     <string name="sleepQuality">How well do you think you slept?</string>
     <string name="btn_wake_time">Enter wake time</string>
     <string name="btn_sleep_time">Enter start time</string>
+
+    <!-- to-do Strings -->
+    <string name="todoHeader">You\'re Todo\'s</string>
+    <string name="doneTodos">What you have done</string>
+    <string name="add_todo">Add a Todo</string>
 </resources>
