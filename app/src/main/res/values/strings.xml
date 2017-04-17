@@ -18,9 +18,11 @@
     <string name="sleepStart">When did you go to bed?</string>
     <string name="sleepEnd">When did you wake up?</string>
     <string name="timeSpentSleeping">How long you slept</string>
-    <string name="sleepQuality">How well do you think you slept?</string>
+    <string name="sleepQuality">Enter Sleep Quality</string>
     <string name="btn_wake_time">Enter wake time</string>
     <string name="btn_sleep_time">Enter start time</string>
+    <string name="btn_date">Enter date</string>
+    <string name="sleepDateString">When did this sleep occur?</string>
 
     <!-- to-do Strings -->
     <string name="todoHeader">You\'re Todo\'s</string>
