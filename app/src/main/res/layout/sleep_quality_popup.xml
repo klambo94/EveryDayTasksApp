@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
+        android:id="@+id/sleep_quality_rating_bar_id"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="44dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="74dp"
+        android:id="@+id/sleep_quality_notes_id"
+        android:layout_alignTop="@+id/sleep_quality_rating_bar_id"
+        android:layout_alignStart="@+id/sleep_quality_rating_bar_id"
+        android:layout_alignEnd="@+id/sleep_quality_rating_bar_id" />
+</RelativeLayout>

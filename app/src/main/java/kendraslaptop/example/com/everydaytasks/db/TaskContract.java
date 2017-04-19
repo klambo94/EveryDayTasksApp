@@ -31,5 +31,7 @@ public class TaskContract {
         public static final String COL_SLEEP_END = "sleep_end";
 
         public static final String COL_SLEEP_DATE = "sleep_date";
+
+        public  static final String COL_SLEEP_RATING = "rating";
     }
 }

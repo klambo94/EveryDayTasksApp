@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/prev_entry_date_id"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="casual"
+        android:textSize="18sp"
+        android:layout_toStartOf="@+id/prev_entry_starts_rating_id" />
+
+    <Button
+        android:text="@string/delete_prev_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prev_entry_delete_btn_id"
+        android:textSize="14sp"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prev_entry_starts_rating_id"
+        android:layout_alignBottom="@+id/prev_entry_delete_btn_id"
+        android:layout_toStartOf="@+id/prev_entry_delete_btn_id"
+        android:layout_marginEnd="46dp" />
+
+    <TextView
+        android:text="@string/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prev_entry_rating_text_id"
+        android:layout_alignBaseline="@+id/prev_entry_starts_rating_id"
+        android:layout_alignBottom="@+id/prev_entry_starts_rating_id"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/pre_entry_date_id"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="casual"
+        android:textSize="18sp" />
+
+</RelativeLayout>

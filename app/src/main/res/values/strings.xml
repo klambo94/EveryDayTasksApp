@@ -23,6 +23,9 @@
     <string name="btn_sleep_time">Enter start time</string>
     <string name="btn_date">Enter date</string>
     <string name="sleepDateString">When did this sleep occur?</string>
+    <string name="prev_sleeps">Past Sleep Entries</string>
+    <string name="rating">rating</string>
+    <string name="delete_prev_entry">Delete Entry</string>
 
     <!-- to-do Strings -->
     <string name="todoHeader">You\'re Todo\'s</string>

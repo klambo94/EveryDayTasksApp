@@ -17,12 +17,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 import kendraslaptop.example.com.everydaytasks.db.TaskContract;
 import kendraslaptop.example.com.everydaytasks.db.TaskDBHelper;
@@ -38,6 +37,7 @@ public class SleepEntry extends AppCompatActivity {
     private String qualityString = "";
     private int hour, min;
     private int month, day, year;
+    private int startRating;
     private TextView startTime;
     private TextView endTime;
     private TextView date;
@@ -100,14 +100,18 @@ public class SleepEntry extends AppCompatActivity {
     }
 
     public void enterSleepQuality(View view) {
-        final EditText taskEditText = new EditText(this);
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("How well did you sleep?")
-                .setView(taskEditText)
+                .setView(R.layout.sleep_quality_popup)
                 .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        qualityString = String.valueOf(taskEditText.getText());
+                        Dialog dlog  = (Dialog) dialog;
+                        RatingBar rating = (RatingBar) dlog.findViewById(R.id.sleep_quality_rating_bar_id);
+                        EditText notes = (EditText) dlog.findViewById(R.id.sleep_quality_notes_id);
+
+                        startRating = rating.getNumStars();
+                        qualityString = String.valueOf(notes.getText());
                     }
                 })
                 .setNegativeButton("Cancel", null)
@@ -204,6 +208,7 @@ public class SleepEntry extends AppCompatActivity {
         values.put(TaskContract.SleepLogEntry.COL_SLEEP_DATE, dateToLog);
         values.put(TaskContract.SleepLogEntry.COL_SLEEP_START, start);
         values.put(TaskContract.SleepLogEntry.COL_SLEEP_END, end);
+        values.put(TaskContract.SleepLogEntry.COL_SLEEP_RATING, startRating);
         db.insertWithOnConflict(TaskContract.SleepLogEntry.TABLE,
                 null,
                 values,
