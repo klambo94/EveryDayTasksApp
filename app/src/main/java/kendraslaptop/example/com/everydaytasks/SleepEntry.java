@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 
@@ -32,12 +33,11 @@ import kendraslaptop.example.com.everydaytasks.db.TaskDBHelper;
  */
 
 public class SleepEntry extends AppCompatActivity {
-    private Settings settings;
     private String format = "";
     private String qualityString = "";
     private int hour, min;
     private int month, day, year;
-    private int startRating;
+    private float startRating;
     private TextView startTime;
     private TextView endTime;
     private TextView date;
@@ -50,7 +50,6 @@ public class SleepEntry extends AppCompatActivity {
         setContentView(R.layout.activity_sleep_log_entry);
         Toolbar myToolBar = (Toolbar) findViewById(R.id.sleep_entry_toolbar_id);
         setSupportActionBar(myToolBar);
-        settings = new Settings();
 
         mHelper = new TaskDBHelper(this);
         startTime = (TextView) findViewById(R.id.sleep_start_btn_id);
@@ -83,18 +82,44 @@ public class SleepEntry extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item != null) {
             switch (item.getItemId()){
-                case R.id.settings_btn:
-                    startActivityForResult(settings.getSettingsIntent(), settings.getRequestCode());
-                    return true;
-                case R.id.save_btn:
-                    addSleepInformationToDb();
-                    //TODO: Go to prevSleepEntries
+               case R.id.save_btn:
+                    if(informationVerified()) {
+                        addSleepInformationToDb();
+                        startActivity(new Intent(this, SleepLogs.class));
+                    }
+                   return true;
                 case R.id.prevSleepEntryBtn:
-                    //TODO: Retrive list of previous entries - this will have to show up as an intent
+                    startActivity(new Intent(this, SleepLogs.class));
+                    return true;
+                case R.id.home_btn:
+                    startActivity(new Intent(this, MainActivity.class));
+                    return true;
                 default:
                     return super.onOptionsItemSelected(item);
             }
         } else {
+            return false;
+        }
+    }
+
+    private boolean informationVerified() {
+        int verified = 0;
+        if(isEmpty(date.getText().toString())){
+            verified++;
+        }
+
+        if(isEmpty(startTime.getText().toString())){
+            verified++;
+        }
+
+        if(isEmpty(endTime.getText().toString())){
+            verified++;
+        }
+
+        if(verified == 3){
+            return true;
+        } else {
+            Toast.makeText(getApplicationContext(), "You must enter a start time, end time, and date", Toast.LENGTH_LONG).show();
             return false;
         }
     }
@@ -110,7 +135,7 @@ public class SleepEntry extends AppCompatActivity {
                         RatingBar rating = (RatingBar) dlog.findViewById(R.id.sleep_quality_rating_bar_id);
                         EditText notes = (EditText) dlog.findViewById(R.id.sleep_quality_notes_id);
 
-                        startRating = rating.getNumStars();
+                        startRating = rating.getRating();
                         qualityString = String.valueOf(notes.getText());
                     }
                 })
@@ -142,8 +167,13 @@ public class SleepEntry extends AppCompatActivity {
             format = "AM";
         }
 
-        view.setText(new StringBuilder().append(hour).append(" : ")
-                .append(min).append(" ").append(format));
+        if(min < 10){
+           view.setText(new StringBuilder().append(hour).append(" : ")
+                   .append("0").append(min).append(" ").append(format));
+        } else {
+            view.setText(new StringBuilder().append(hour).append(" : ")
+                    .append(min).append(" ").append(format));
+        }
 
     }
 
@@ -188,14 +218,6 @@ public class SleepEntry extends AppCompatActivity {
         date.setText(new StringBuilder().append(month).append("/")
                 .append(day).append("/").append(year));
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(resultCode == RESULT_OK) {
-            if(requestCode == settings.getRequestCode()){
-                settings.onActivityResult(requestCode, resultCode, data);
-            }
-        }
-    }
 
 
     private void addSleepInformationToDb() {
@@ -214,5 +236,14 @@ public class SleepEntry extends AppCompatActivity {
                 values,
                 SQLiteDatabase.CONFLICT_REPLACE);
         db.close();
+    }
+
+    private boolean isEmpty(String str) {
+        if(str.length() > 0
+                && (!str.equals("") && !str.contains("Enter"))){
+            return true;
+        }
+
+        return false;
     }
 }

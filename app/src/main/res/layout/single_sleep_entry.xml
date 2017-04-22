@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/date_Text_id"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="casual"
+        android:textSize="18sp"
+        android:layout_below="@+id/single_sleep_entry_toolbar_id"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sleep_start_text_id"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="casual"
+        android:textSize="18sp"
+        android:layout_below="@+id/date_Text_id"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/single_sleep_rating_bar_id"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/sleep_end_text__id"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sleep_end_text__id"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="casual"
+        android:textSize="18sp"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/sleep_start_text_id"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/quality_text_id"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="casual"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/sleep_end_text__id"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Notes:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notes_title_id"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="casual"
+        android:textSize="18sp"
+        android:layout_below="@+id/single_sleep_rating_bar_id"
+        android:layout_alignEnd="@+id/quality_text_id" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/notes_scroll_view"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/notes_title_id"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/notes_entry_text_id"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:fontFamily="casual" />
+    </ScrollView>
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorAccent"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/single_sleep_entry_toolbar_id"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

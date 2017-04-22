@@ -24,7 +24,7 @@
     <string name="btn_date">Enter date</string>
     <string name="sleepDateString">When did this sleep occur?</string>
     <string name="prev_sleeps">Past Sleep Entries</string>
-    <string name="rating">rating</string>
+    <string name="rating">Rating</string>
     <string name="delete_prev_entry">Delete Entry</string>
 
     <!-- to-do Strings -->

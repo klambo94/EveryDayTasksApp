@@ -2,6 +2,7 @@ package kendraslaptop.example.com.everydaytasks;
 
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -89,7 +90,9 @@ public class TodoList extends AppCompatActivity {
                             .create();
                     dialog.show();
                     return true;
-               default:
+                case  R.id.home_btn:
+                    startActivity(new Intent(this, MainActivity.class));
+                default:
                     return super.onOptionsItemSelected(item);
             }
         } else {

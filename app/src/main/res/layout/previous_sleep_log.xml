@@ -8,9 +8,17 @@
         android:background="?attr/colorAccent"
         android:theme="?attr/actionBarTheme"
         android:minHeight="?attr/actionBarSize"
+        android:id="@+id/prev_sleep_log_toolbar_id"
         android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/prev_sleep_text_id"
         android:layout_alignParentStart="true"
-        android:id="@+id/prev_sleep_log_toolbar_id" />
+        android:layout_marginTop="16dp"
+        android:id="@+id/prev_sleep_list_viewe_id" />
 
     <TextView
         android:text="@string/prev_sleeps"
@@ -24,10 +32,4 @@
         android:fontFamily="casual"
         android:textSize="18sp" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/prev_sleep_text_id"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/prev_entries_list_view_id" />
 </RelativeLayout>

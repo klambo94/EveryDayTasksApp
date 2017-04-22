@@ -7,4 +7,8 @@
         android:icon="@android:drawable/ic_menu_add"
         android:title="Add Task"
         app:showAsAction="always" />
+    <item android:title="Home"
+        android:id="@+id/home_btn"
+        app:showAsAction="always"
+        android:icon="?attr/homeAsUpIndicator" />
 </menu>

@@ -22,7 +22,6 @@ import java.util.GregorianCalendar;
  */
 
 public class Journal extends AppCompatActivity{
-    Settings settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,6 @@ public class Journal extends AppCompatActivity{
         clearJournalEntry();
         setDateAndTimeInHeader();
         setLocation();
-        settings = new Settings();
     }
 
     private void setLocation() {
@@ -69,8 +67,8 @@ public class Journal extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item != null) {
             switch (item.getItemId()){
-                case R.id.settings_btn:
-                    startActivityForResult(settings.getSettingsIntent(), settings.getRequestCode());
+                case R.id.home_btn:
+                    startActivity(new Intent(this, MainActivity.class));
                     return true;
                 case R.id.save_btn:
                     //TODO: Data persistance here and return intent - possibly to how was your day
@@ -81,15 +79,6 @@ public class Journal extends AppCompatActivity{
             }
         } else {
             return false;
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(resultCode == RESULT_OK) {
-            if(requestCode == settings.getRequestCode()){
-                settings.onActivityResult(requestCode, resultCode, data);
-            }
         }
     }
 }

@@ -5,11 +5,13 @@
     <item android:title="@string/save"
         android:id="@+id/save_btn"
         app:showAsAction="always"
-        android:visible="true" />
+        android:visible="true"
+        android:icon="@android:drawable/ic_menu_save" />
+    <item android:title="Home"
+        android:id="@+id/home_btn"
+        android:icon="?attr/homeAsUpIndicator"
+        app:showAsAction="always" />
     <item android:title="@string/prevEntries"
         android:id="@+id/prevSleepEntryBtn"
         app:showAsAction="ifRoom"/>
-    <item android:title="@string/action_settings"
-        android:id="@+id/settings_btn"
-        app:showAsAction="never" />
 </menu>
