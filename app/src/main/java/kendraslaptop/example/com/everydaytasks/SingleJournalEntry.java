@@ -6,44 +6,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 /**
- * Created by Kendra's Laptop on 4/22/2017.
+ * Created by Kendra's Laptop on 4/23/2017.
  */
 
-public class SingleSleepLogEntry extends AppCompatActivity{
+public class SingleJournalEntry extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.single_sleep_entry);
+        setContentView(R.layout.single_journal_entry);
         Toolbar myToolBar = (Toolbar) findViewById(R.id.single_journal_entry_toolbar_id);
         setSupportActionBar(myToolBar);
 
         Intent inIntent = getIntent();
-        String date = inIntent.getStringExtra("DATE");
-        String startTime = inIntent.getStringExtra("START");
-        String endTime = inIntent.getStringExtra("END");
-        Float rating = Float.parseFloat(inIntent.getStringExtra("RATING"));
-        String notes = inIntent.getStringExtra("NOTES");
+        String dateAndTime = inIntent.getStringExtra("DATE");
+        String location = inIntent.getStringExtra("LOCATIONLAT") + "\n" +inIntent.getStringExtra("LOCATIONLONG");
+        String entry = inIntent.getStringExtra("ENTRY");
 
         TextView dateView = (TextView)findViewById(R.id.date_Text_id);
-        dateView.setText(date);
+        dateView.setText(dateAndTime);
 
         TextView startView = (TextView) findViewById(R.id.single_location_text_id);
-        startView.setText(startTime);
+        startView.setText(location);
 
-        TextView endView = (TextView) findViewById(R.id.sleep_end_text__id);
-        endView.setText(endTime);
-
-        RatingBar ratingBar = (RatingBar) findViewById(R.id.single_sleep_rating_bar_id);
-        ratingBar.setRating(rating);
-
-        TextView notesView = (TextView) findViewById(R.id.notes_entry_text_id);
-        notesView.setText(notes);
-
+        TextView endView = (TextView) findViewById(R.id.single_journal_entry_text_id);
+        endView.setText(entry);
     }
 
     @Override
@@ -56,9 +46,9 @@ public class SingleSleepLogEntry extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item != null) {
             switch (item.getItemId()){
-                 case R.id.new_entry_btn:
-                    startActivity(new Intent(this, SleepEntry.class));
-                     return true;
+                case R.id.new_entry_btn:
+                    startActivity(new Intent(this, Journal.class));
+                    return true;
                 case R.id.home_btn:
                     startActivity(new Intent(this, MainActivity.class));
                     return true;
@@ -70,3 +60,4 @@ public class SingleSleepLogEntry extends AppCompatActivity{
         }
     }
 }
+

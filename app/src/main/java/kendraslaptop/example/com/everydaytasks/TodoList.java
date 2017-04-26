@@ -24,6 +24,11 @@ import kendraslaptop.example.com.everydaytasks.db.TaskContract;
 import kendraslaptop.example.com.everydaytasks.db.TaskDBHelper;
 
 /**
+ * Followed a To-do tutorial and modified for my needs/added
+ * functionality for my needs as well. Some of this list view code/
+ * database code was also ported over to other class files for Journal,
+ * and sleep log views. Tutorial found here:
+ * https://www.sitepoint.com/starting-android-development-creating-todo-app/
  * Created by Kendra's Laptop on 4/13/2017.
  */
 
@@ -44,6 +49,8 @@ public class TodoList extends AppCompatActivity {
      */
     private ArrayAdapter<String> doneTodoAdapter;
 
+
+    //TODO: Add back in the done todo list back into the todo list.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -134,6 +141,29 @@ public class TodoList extends AppCompatActivity {
         TextView taskTextView = (TextView) parent.findViewById(R.id.done_task_title);
         String task = String.valueOf(taskTextView.getText());
         SQLiteDatabase db = mHelper.getWritableDatabase();
+
+        //Delete Task from To-do's list
+        db.delete(TaskContract.TaskDoneEntry.TABLE,
+                TaskContract.TaskDoneEntry.COL_TASK_TITLE + "= ?",
+                new String[] {task});
+
+        db.close();
+        updateUI();
+    }
+
+    public void addTaskBackToStillTodoList(View view) {
+        View parent = (View) view.getParent();
+        TextView taskTextView = (TextView) parent.findViewById(R.id.done_task_title);
+        String task = String.valueOf(taskTextView.getText());
+        SQLiteDatabase db = mHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TaskContract.TaskNewEntry.COL_TASK_TITLE, task);
+        db.insertWithOnConflict(TaskContract.TaskNewEntry.TABLE,
+                null,
+                values,
+                SQLiteDatabase.CONFLICT_REPLACE);
+
+        task = String.valueOf(taskTextView.getText());
 
         //Delete Task from To-do's list
         db.delete(TaskContract.TaskDoneEntry.TABLE,

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_vertical">
@@ -13,13 +14,22 @@
         android:text="Hello"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/done_task_delete"
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:layout_alignBottom="@+id/add_back_btn_id"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="Remove"
-        android:onClick="removeTask"/>
+        android:id="@+id/done_task_delete"
+        android:onClick="removeTask" />
+
+    <Button
+        android:text="Add Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_back_btn_id"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/done_task_delete"
+        android:onClick="addTaskBackToStillTodoList" />
 
 </RelativeLayout>

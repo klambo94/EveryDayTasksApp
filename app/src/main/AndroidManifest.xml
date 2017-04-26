@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kendraslaptop.example.com.everydaytasks">
-
+    <permission android:name="android.permission.ACCESS_COURSE_LOCATION"/>
+    <permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,6 +31,7 @@
         <activity android:name=".TodoList"/>
         <activity android:name=".SingleSleepLogEntry"
             android:label="EveryDayTasks"/>
+        <activity android:name=".SingleJournalEntry"
+            android:label="EveryDayTasks"/>
     </application>
-
 </manifest>

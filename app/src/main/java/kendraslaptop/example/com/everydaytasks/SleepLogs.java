@@ -5,28 +5,24 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.menu.ExpandedMenuView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import kendraslaptop.example.com.everydaytasks.db.TaskContract;
 import kendraslaptop.example.com.everydaytasks.db.TaskDBHelper;
 
 /**
+ * As mentioned in TodoList.java, I followed a tutorial and the
+ * database implementation in these Sleep files have been modified
+ * for my needs.
  * Created by Kendra's Laptop on 4/13/2017.
  */
 
@@ -93,7 +89,7 @@ public class SleepLogs extends AppCompatActivity {
 
     private void updateUI() {
         SQLiteDatabase db = mHelper.getReadableDatabase();
-        List<String>entryList = new ArrayList<>();
+        List<String> entryList = new ArrayList<>();
         Cursor cursor = db.query(TaskContract.SleepLogEntry.TABLE,
                 new String[]{
                         TaskContract.SleepLogEntry._ID,
