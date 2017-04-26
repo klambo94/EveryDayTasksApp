@@ -80,20 +80,6 @@
             android:layout_below="@+id/sleep_entry_title_id"
             android:layout_alignParentStart="true" />
 
-        <Button
-            android:text="@string/btn_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/date_btn_id"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:fontFamily="casual"
-            android:textAllCaps="false"
-            android:onClick="setDate"
-            android:layout_marginStart="13dp"
-            android:layout_alignBaseline="@+id/sleepDate"
-            android:layout_alignBottom="@+id/sleepDate"
-            android:layout_toEndOf="@+id/sleep_entry_title_id" />
-
         <TextView
             android:text="@string/sleepDateString"
             android:layout_width="wrap_content"
@@ -117,6 +103,20 @@
             android:layout_below="@+id/date_btn_id"
             android:layout_alignParentEnd="true"
             android:onClick="enterSleepQuality" />
+
+        <Button
+            android:text="@string/btn_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/date_btn_id"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:fontFamily="casual"
+            android:textAllCaps="false"
+            android:onClick="setDate"
+            android:textAlignment="textStart"
+            android:layout_alignBaseline="@+id/sleepDate"
+            android:layout_alignBottom="@+id/sleepDate"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 

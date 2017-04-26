@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setBtns();
     }
 
+
     private void setBtns() {
         journalBtnId = (Button) findViewById(R.id.journalBtnId);
         foodLogBtnId = (Button) findViewById(R.id.foodEntryBtnId);

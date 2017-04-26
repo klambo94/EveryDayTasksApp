@@ -31,4 +31,8 @@
     <string name="todoHeader">You\'re Todo\'s</string>
     <string name="doneTodos">What you have done</string>
     <string name="add_todo">Add a Todo</string>
+
+    <!--Previous Entries List View Strings -->
+    <string name="prev_entry_for_sleep_journal">Previous Entries for Sleep and Journal Logs</string>
+    <string name="prev_entry_choice">Please choose which type of entries you want to view</string>
 </resources>
