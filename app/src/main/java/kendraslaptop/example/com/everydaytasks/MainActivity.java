@@ -1,6 +1,7 @@
 package kendraslaptop.example.com.everydaytasks;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -11,7 +12,6 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button journalBtnId;
     Button foodLogBtnId;
-    Button workoutLogBtnId;
     Button sleepLogBtnId;
     Button dayBtnId;
     Button todoList;
@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setBtns() {
         journalBtnId = (Button) findViewById(R.id.journalBtnId);
-        foodLogBtnId = (Button) findViewById(R.id.foodEntryBtnId);
-        workoutLogBtnId = (Button) findViewById(R.id.exersiceBtnId);
+        foodLogBtnId = (Button) findViewById(R.id.letOffSomeSteamBtnID);
         sleepLogBtnId = (Button) findViewById(R.id.sleepLogBtnId);
         dayBtnId = (Button) findViewById(R.id.dayBtnId);
         todoList = (Button) findViewById(R.id.todoBtnId);
@@ -52,12 +51,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity( new Intent(this, SleepEntry.class));
     }
 
-    public void onClickFoodLog(View view) {
-        //TODO: Implicit intent
-    }
-
-    public void onClickWorkoutLog(View view) {
-        //TODO: Implcit Intent
+    public void onLetOffSteam(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.takeafive.com/"));
+        startActivity(intent);
     }
 
 

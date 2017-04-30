@@ -4,9 +4,8 @@
     <string name="EntryLogBtn">View your previous Entries</string>
     <string name="talkAboutItBtnText">Let\'s talk about it</string>
     <string name="todoListBtnText">Your todo List</string>
-    <string name="foodLogBtnText">What you ate today</string>
+    <string name="letOffSteamBtnText">Let Off Some Steam</string>
     <string name="sleepLogText">Sleep Log</string>
-    <string name="exerciseBtnText">Work it! Log your workout</string>
     <string name="action_settings">Settings</string>
 
     <!--Journal Strings-->

@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -50,7 +51,6 @@ public class TodoList extends AppCompatActivity {
     private ArrayAdapter<String> doneTodoAdapter;
 
 
-    //TODO: Add back in the done todo list back into the todo list.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,8 +115,8 @@ public class TodoList extends AppCompatActivity {
 
     public void deleteTask(View view) {
         View parent = (View) view.getParent();
-        TextView taskTextView = (TextView) parent.findViewById(R.id.task_title);
-        String task = String.valueOf(taskTextView.getText());
+        CheckBox taskTextView = (CheckBox) parent.findViewById(R.id.task_title);
+        String task = taskTextView.getText().toString();
         SQLiteDatabase db = mHelper.getWritableDatabase();
 
         //Delete Task from To-do's list
@@ -138,8 +138,8 @@ public class TodoList extends AppCompatActivity {
 
     public void removeTask(View view) {
         View parent = (View) view.getParent();
-        TextView taskTextView = (TextView) parent.findViewById(R.id.done_task_title);
-        String task = String.valueOf(taskTextView.getText());
+        CheckBox taskTextView = (CheckBox) parent.findViewById(R.id.done_check_box);
+        String task = taskTextView.getText().toString();
         SQLiteDatabase db = mHelper.getWritableDatabase();
 
         //Delete Task from To-do's list
@@ -153,8 +153,8 @@ public class TodoList extends AppCompatActivity {
 
     public void addTaskBackToStillTodoList(View view) {
         View parent = (View) view.getParent();
-        TextView taskTextView = (TextView) parent.findViewById(R.id.done_task_title);
-        String task = String.valueOf(taskTextView.getText());
+        CheckBox taskTextView = (CheckBox) parent.findViewById(R.id.done_check_box);
+        String task = taskTextView.getText().toString();
         SQLiteDatabase db = mHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(TaskContract.TaskNewEntry.COL_TASK_TITLE, task);
@@ -222,7 +222,7 @@ public class TodoList extends AppCompatActivity {
         if (doneTodoAdapter == null) {
             doneTodoAdapter = new ArrayAdapter<>(this,
                     R.layout.done_todo_message,
-                    R.id.done_task_title,
+                    R.id.done_check_box,
                     taskList);
             mDoneTodoListView.setAdapter(doneTodoAdapter);
         } else {
